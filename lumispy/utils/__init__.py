@@ -30,3 +30,5 @@ from .signals import (
     com,
     crop_edges,
 )
+
+from .refractive_index import(RefractiveIndex)

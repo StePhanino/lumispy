@@ -490,3 +490,27 @@ def solve_grating_equation(
 
 
 solve_grating_equation.__doc__ %= GRATING_EQUATION_DOCSTRING_PARAMETERS
+
+
+def compare_extent(extent, ref):
+    """
+    True if extent range cover ref range, False otherwise
+    
+    Parameters
+    ----------
+    extent : tuple
+        (extent_min, extent_max).
+    ref : tuple
+        (ref_min, ref_max).
+        
+    """
+    text = ('Extent or ref not sorted correctly.\n'
+            'Each of them should be of the form : (min, max) with min < max')
+    
+    if extent[1] > extent[0] and ref[1] > ref[0]:
+        if  extent[0] <= ref[0] and extent[1] >= ref[1]:
+            return True
+        else:                
+            return False 
+    else:
+        raise Exception(text)
